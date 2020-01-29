@@ -13,37 +13,38 @@ import com.example.bigscouting2020.R;
  * one of the sections/tabs/pages.
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    int mNumOfTabs;
 
     @StringRes
     private static final int[] TAB_TITLES = new int[] {R.string.tab_text_1, R.string.tab_text_2};
-    private final Context mContext;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+
+    public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
         super(fm);
-        mContext = context;
+        this.mNumOfTabs = numOfTabs;
     }
 
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return Tab1.newInstance();
+                Tab1 tab1 = new Tab1();
+                return tab1;
             case 1:
-                return Tab2.newInstance();
+                Tab2 tab2 = new Tab2();
+                return tab2;
             case 2:
-                return Tab3.newInstance();
+                Tab3 tab3 = new Tab3();
+                return tab3;
+            default:
+                return null;
         }
     }
 
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mContext.getResources().getString(TAB_TITLES[position]);
-    }
+
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
-        return 2;
+       return mNumOfTabs;
     }
 }
