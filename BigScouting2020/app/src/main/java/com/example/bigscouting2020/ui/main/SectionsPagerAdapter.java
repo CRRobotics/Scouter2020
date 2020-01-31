@@ -15,8 +15,6 @@ import com.example.bigscouting2020.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
     int mNumOfTabs;
 
-    @StringRes
-    private static final int[] TAB_TITLES = new int[] {R.string.tab_text_1, R.string.tab_text_2};
 
 
     public SectionsPagerAdapter(FragmentManager fm, int numOfTabs) {
