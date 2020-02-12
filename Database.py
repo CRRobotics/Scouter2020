@@ -1,7 +1,7 @@
-def localdata(column x, column y):
+def commit_data(cursor, data):
 
     import sqlite3
-    conn = conn.cursor(local.sqlite)
+    conn = conn.cursor(local.db)
     cur = conn.cursor()
 
     cur.execute("DROP TABLE IF EXISTS Local)
