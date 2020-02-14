@@ -1,5 +1,6 @@
 package com.example.bigscouting2020;
 
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -16,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.appcompat.widget.Toolbar;
 import com.example.bigscouting2020.ui.main.SectionsPagerAdapter;
 
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);

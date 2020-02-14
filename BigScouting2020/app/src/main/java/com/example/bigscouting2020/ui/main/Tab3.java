@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.example.bigscouting2020.R;
 
@@ -88,6 +90,7 @@ public class Tab3 extends Fragment {
         }
     }
 
+
     @Override
     public void onDetach() {
         super.onDetach();
@@ -108,4 +111,10 @@ public class Tab3 extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    Spinner dropdown = getView().findViewById(R.id.climbSpinner);
+    String[] items = new String[]{"Left", "Center", "Right", "None"};
+    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+    dropdown.setAdapter(adapter);
+
 }

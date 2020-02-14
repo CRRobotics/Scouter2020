@@ -6,4 +6,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_next_screen">NextScreen</string>
+
+    <string-array name="planets_array">
+        <item>Left</item>
+        <item>Center</item>
+        <item>Right</item>
+        <item>N/A</item>
+    </string-array>
 </resources>
