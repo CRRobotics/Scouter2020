@@ -112,9 +112,9 @@ public class Tab3 extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    Spinner dropdown = getView().findViewById(R.id.climbSpinner);
-    String[] items = new String[]{"Left", "Center", "Right", "None"};
-    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-    dropdown.setAdapter(adapter);
+   // Spinner dropdown = getView().findViewById(R.id.climbSpinner);
+    //String[] items = new String[]{"Left", "Center", "Right", "None"};
+    //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+    //dropdown.setAdapter(adapter);
 
 }
