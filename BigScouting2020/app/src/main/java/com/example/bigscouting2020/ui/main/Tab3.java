@@ -14,6 +14,8 @@ import android.widget.Spinner;
 
 import com.example.bigscouting2020.R;
 
+import java.lang.reflect.Array;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -33,6 +35,7 @@ public class Tab3 extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private View topkek;
 
     public Tab3() {
         // Required empty public constructor
@@ -68,8 +71,15 @@ public class Tab3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab3, container, false);
+        final View topkek = inflater.inflate(R.layout.fragment_tab3, container, false);
+        this.topkek = topkek;
+
+        Spinner dropdown = getView().findViewById(R.id.climbSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.planets_array, R.layout.support_simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        dropdown.setAdapter(adapter);
+
+        return topkek;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

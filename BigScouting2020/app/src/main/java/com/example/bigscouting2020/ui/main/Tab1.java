@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.bigscouting2020.R;
 
@@ -31,6 +33,7 @@ public class Tab1 extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private View topkek;
 
     public Tab1() {
         // Required empty public constructor
@@ -67,7 +70,50 @@ public class Tab1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab1, container, false);
+        final View topkek = inflater.inflate(R.layout.fragment_tab1, container, false);
+        this.topkek = topkek;
+
+        Button button = topkek.findViewById(R.id.autoHighGoalPlus);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView = topkek.findViewById(R.id.autoHighGoalCounter);
+                int num = Integer.parseInt(textView.getText().toString());
+                num += 1;
+                textView.setText(Integer.toString(num));
+            }
+        });
+        Button button2 = topkek.findViewById(R.id.autoHighGoalMinus);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView2 = topkek.findViewById(R.id.autoHighGoalCounter);
+                int num2 = Integer.parseInt(textView2.getText().toString());
+                num2 -= 1;
+                textView2.setText(Integer.toString(num2));
+            }
+        });
+        Button button3 = topkek.findViewById(R.id.autoLowGoalPlus);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView3 = topkek.findViewById(R.id.autoLowGoalCounter);
+                int num3 = Integer.parseInt(textView3.getText().toString());
+                num3 += 1;
+                textView3.setText(Integer.toString(num3));
+            }
+        });
+        Button button4 = topkek.findViewById(R.id.autoLowGoalMinus);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView4 = topkek.findViewById(R.id.autoLowGoalCounter);
+                int num4 = Integer.parseInt(textView4.getText().toString());
+                num4 -= 1;
+                textView4.setText(Integer.toString(num4));
+            }
+        });
+        return topkek;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
