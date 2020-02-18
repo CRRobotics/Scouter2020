@@ -30,6 +30,6 @@ def syncWithDatabase(self):
         return
     try:
         self.currentlySyncing = True
-        onlineDbConnection = pymysql.connect(host='coderedscout.heliohost.org', user='codered_user1', password='codered2019',
-                                         db='codered_scouting', charset='utf8mb4')
+        onlineDbConnection = pymysql.connect(host='coderedscout.heliohost.org', user='codered_user1', password='codered2019', \
+        db='codered_scouting', charset='utf8mb4')
         
