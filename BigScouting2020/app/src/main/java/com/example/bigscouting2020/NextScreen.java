@@ -1,30 +1,23 @@
-package com.example.bigscouting2020.ui.main;
+package com.example.bigscouting2020;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
-import com.example.bigscouting2020.R;
-
-import java.lang.reflect.Array;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Tab3.OnFragmentInteractionListener} interface
+ * {@link NextScreen.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Tab3#newInstance} factory method to
+ * Use the {@link NextScreen#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tab3 extends Fragment {
+public class NextScreen extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -35,9 +28,8 @@ public class Tab3 extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    private View topkek;
 
-    public Tab3() {
+    public NextScreen() {
         // Required empty public constructor
     }
 
@@ -47,11 +39,11 @@ public class Tab3 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Tab3.
+     * @return A new instance of fragment NextScreen.
      */
     // TODO: Rename and change types and number of parameters
-    public static Tab3 newInstance(String param1, String param2) {
-        Tab3 fragment = new Tab3();
+    public static NextScreen newInstance(String param1, String param2) {
+        NextScreen fragment = new NextScreen();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -71,15 +63,8 @@ public class Tab3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View topkek = inflater.inflate(R.layout.fragment_tab3, container, false);
-        this.topkek = topkek;
-
-        Spinner dropdown = this.topkek.findViewById(R.id.climbSpinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.topkek.getContext(), R.array.planets_array, R.layout.support_simple_spinner_dropdown_item);
-        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        dropdown.setAdapter(adapter);
-
-        return topkek;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_next_screen, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -99,7 +84,6 @@ public class Tab3 extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
-
 
     @Override
     public void onDetach() {
@@ -121,10 +105,4 @@ public class Tab3 extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
-   // Spinner dropdown = getView().findViewById(R.id.climbSpinner);
-    //String[] items = new String[]{"Left", "Center", "Right", "None"};
-    //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-    //dropdown.setAdapter(adapter);
-
 }
