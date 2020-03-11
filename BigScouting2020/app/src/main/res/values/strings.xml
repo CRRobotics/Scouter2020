@@ -13,4 +13,5 @@
         <item>Right</item>
         <item>N/A</item>
     </string-array>
+    <string name="action_settings">Settings</string>
 </resources>
