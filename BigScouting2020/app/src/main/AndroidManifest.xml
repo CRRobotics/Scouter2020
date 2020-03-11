@@ -12,7 +12,7 @@
         <activity android:name=".AllianceSelectionActivity"></activity>
         <activity android:name=".ScouterActivity"></activity>
         <activity
-            android:name=".NextScreenActivity"
+            android:name=".LoadingScreenActivity"
             android:label="@string/title_activity_next_screen"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

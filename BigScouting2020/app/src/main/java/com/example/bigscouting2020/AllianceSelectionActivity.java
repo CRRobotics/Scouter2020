@@ -6,13 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
 public class AllianceSelectionActivity extends AppCompatActivity {
 
-    public final String Level = "LevelConstant";
-    public final String Alliance = "AllianceConstant";
+    public static final String Level = "LevelConstant";
+    public static final String Alliance = "AllianceConstant";
+    public static final String MatchNumber = "MatchNumberConstant";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +42,21 @@ public class AllianceSelectionActivity extends AppCompatActivity {
 
     public void startScouter(View v)
     {
-        Intent intent = new Intent(this, NextScreenActivity.class);
+        Intent intent = new Intent(this, LoadingScreenActivity.class);
         String[] type = ((Button) v).getText().toString().split(" ");
         String level = type[0];
         String alliance = type[1];
         System.out.println(level + ":::" + alliance);
+
+        EditText et = findViewById(R.id.matchNumber);
+        String s = et.getText().toString();
+        if (s.length() == 0)
+            return;
+        int matchNumber = Integer.parseInt(s);
+
         intent.putExtra(Level, level);
         intent.putExtra(Alliance, alliance);
+        intent.putExtra(MatchNumber, matchNumber);
         startActivity(intent);
     }
 }
