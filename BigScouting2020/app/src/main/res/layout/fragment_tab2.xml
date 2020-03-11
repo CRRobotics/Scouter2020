@@ -45,29 +45,29 @@
         android:layout_height="64dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="204dp"
-        android:text="Rotation Control?"
+        android:text="Spinner Color?"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602" />
+        app:layout_constraintVertical_bias="0.551" />
 
     <CheckBox
         android:id="@+id/checkBox4"
-        android:layout_width="130dp"
-        android:layout_height="43dp"
+        android:layout_width="128dp"
+        android:layout_height="65dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="204dp"
-        android:text="Spinner?"
+        android:text="Spinner Rotation?"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.302" />
 
     <CheckBox
         android:id="@+id/checkBox3"
@@ -75,14 +75,14 @@
         android:layout_height="64dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="204dp"
-        android:text="Position Control?"
+        android:text="Capacity?"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.067" />
 
     <Button
         android:id="@+id/lowGoalPlus"
