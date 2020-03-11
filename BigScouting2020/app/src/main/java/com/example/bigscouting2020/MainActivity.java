@@ -1,76 +1,35 @@
 package com.example.bigscouting2020;
 
-import android.content.DialogInterface;
-import android.net.Uri;
-import android.os.Bundle;
-
-import com.example.bigscouting2020.ui.main.Tab1;
-import com.example.bigscouting2020.ui.main.Tab2;
-import com.example.bigscouting2020.ui.main.Tab3;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.widget.Toolbar;
-import com.example.bigscouting2020.ui.main.SectionsPagerAdapter;
-
-public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentInteractionListener, Tab2.OnFragmentInteractionListener, Tab3.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Autonomous"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tele-Op"));
-        tabLayout.addTab(tabLayout.newTab().setText("Endgame"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        findViewById(R.id.scoutButton).setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+            public void onClick(View v) {
+                onScoutPressed(v);
             }
         });
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+        this.findViewById(R.id.syncButton);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+    public void onScoutPressed(View v)
+    {
+        Intent intent = new Intent(this, AllianceSelectionActivity.class);
+        startActivity(intent);
     }
 
-    public void onFragmentInteraction(Uri uri)
-    { }
+    public void onSyncPressed(View v)
+    {
 
+    }
 }

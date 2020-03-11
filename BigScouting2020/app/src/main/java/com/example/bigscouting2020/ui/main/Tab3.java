@@ -74,8 +74,8 @@ public class Tab3 extends Fragment {
         final View topkek = inflater.inflate(R.layout.fragment_tab3, container, false);
         this.topkek = topkek;
 
-        Spinner dropdown = getView().findViewById(R.id.climbSpinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.planets_array, R.layout.support_simple_spinner_dropdown_item);
+        Spinner dropdown = this.topkek.findViewById(R.id.climbSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.topkek.getContext(), R.array.planets_array, R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         dropdown.setAdapter(adapter);
 
