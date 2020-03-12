@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class AllianceSelectionActivity extends AppCompatActivity {
 
+    // NOTE: MAY NEED TO DISABLE THE BACK BUTTON
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
