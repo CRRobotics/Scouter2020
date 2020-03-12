@@ -61,6 +61,19 @@ public class LoadingScreenActivity extends AppCompatActivity {
                 startScouter(v);
             }
         });
+
+        findViewById(R.id.goToHome).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                goHome(v);
+            }
+        });
+    }
+
+    public void goHome(View v)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     public void startScouter(View v)

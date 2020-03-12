@@ -1,5 +1,6 @@
 package com.example.bigscouting2020;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -19,11 +20,21 @@ import com.example.bigscouting2020.ui.main.SectionsPagerAdapter;
 
 public class ScouterActivity extends AppCompatActivity implements Tab1.OnFragmentInteractionListener, Tab2.OnFragmentInteractionListener, Tab3.OnFragmentInteractionListener{
 
+    public int teamNumber;
+    public int matchNumber;
+    public String level;
+    public String alliance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scouter);
 
+        Intent intent = getIntent();
+        teamNumber = intent.getIntExtra(Constants.TeamNumber, -1);
+        matchNumber = intent.getIntExtra(Constants.MatchNumber, -1);
+        level = intent.getStringExtra(Constants.Level);
+        alliance = intent.getStringExtra(Constants.Alliance);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,8 +82,22 @@ public class ScouterActivity extends AppCompatActivity implements Tab1.OnFragmen
 
     public void onSubmit(View v)
     {
+        syncWithDatabase();
+
+        Intent intent = new Intent(this, LoadingScreenActivity.class);
+        intent.putExtra(Constants.Level, level);
+        intent.putExtra(Constants.Alliance, alliance);
+        intent.putExtra(Constants.MatchNumber, matchNumber + 1);
+        
+        startActivity(intent);
 
     }
+
+    public void syncWithDatabase()
+    {
+        // do stuff here, good luck bro
+    }
+
 
 
 }
