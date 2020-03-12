@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
                 onScoutPressed(v);
             }
         });
-        this.findViewById(R.id.syncButton);
+        findViewById(R.id.syncButton);
+
     }
 
     public void onScoutPressed(View v)

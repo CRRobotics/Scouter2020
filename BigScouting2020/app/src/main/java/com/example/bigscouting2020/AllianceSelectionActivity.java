@@ -12,10 +12,6 @@ import java.util.ArrayList;
 
 public class AllianceSelectionActivity extends AppCompatActivity {
 
-    public static final String Level = "LevelConstant";
-    public static final String Alliance = "AllianceConstant";
-    public static final String MatchNumber = "MatchNumberConstant";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +30,13 @@ public class AllianceSelectionActivity extends AppCompatActivity {
             b.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    startScouter(v);
+                    startLoadingScreen(v);
                 }
             });
         }
     }
 
-    public void startScouter(View v)
+    public void startLoadingScreen(View v)
     {
         Intent intent = new Intent(this, LoadingScreenActivity.class);
         String[] type = ((Button) v).getText().toString().split(" ");
@@ -53,10 +49,12 @@ public class AllianceSelectionActivity extends AppCompatActivity {
         if (s.length() == 0)
             return;
         int matchNumber = Integer.parseInt(s);
+        if (matchNumber < 0 || matchNumber > 150)
+            return;
 
-        intent.putExtra(Level, level);
-        intent.putExtra(Alliance, alliance);
-        intent.putExtra(MatchNumber, matchNumber);
+        intent.putExtra(Constants.Level, level);
+        intent.putExtra(Constants.Alliance, alliance);
+        intent.putExtra(Constants.MatchNumber, matchNumber);
         startActivity(intent);
     }
 }

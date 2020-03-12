@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.bigscouting2020.R;
+import com.example.bigscouting2020.ScouterActivity;
 
 import java.lang.reflect.Array;
 
@@ -73,6 +75,13 @@ public class Tab3 extends Fragment {
                              Bundle savedInstanceState) {
         final View topkek = inflater.inflate(R.layout.fragment_tab3, container, false);
         this.topkek = topkek;
+
+        topkek.findViewById(R.id.submitButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ScouterActivity) getActivity()).onSubmit(v);
+            }
+        });
 
         Spinner dropdown = this.topkek.findViewById(R.id.climbSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.topkek.getContext(), R.array.planets_array, R.layout.support_simple_spinner_dropdown_item);

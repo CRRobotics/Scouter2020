@@ -12,6 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
 import com.example.bigscouting2020.ui.main.SectionsPagerAdapter;
@@ -64,6 +65,14 @@ public class ScouterActivity extends AppCompatActivity implements Tab1.OnFragmen
     }
 
     public void onFragmentInteraction(Uri uri)
-    { }
+    {
+
+    }
+
+    public void onSubmit(View v)
+    {
+
+    }
+
 
 }

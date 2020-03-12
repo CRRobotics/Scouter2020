@@ -1,0 +1,3 @@
+go here for regional json
+
+https://www.thebluealliance.com/api/v3/event/2020nyro/matches/simple
